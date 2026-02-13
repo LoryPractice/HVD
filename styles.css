@@ -99,11 +99,6 @@ section:target {
   display: block;
   animation: fadeIn 0.8s ease;
 }
-
-.signature {
-  font-style: italic;
-}
-
 @keyframes heartbeat {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }

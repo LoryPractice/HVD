@@ -165,20 +165,6 @@ section:target .dot {
   100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
-The issue with your reset button in Safari is likely a combination of two things: the syntax error in the CSS block immediately preceding it and how Safari handles inline-block elements within targeted sections.
-
-Because the .signature class was missing a closing brace }, Safari likely stopped reading the rest of your stylesheet, including the styles for .reset-btn.
-
-The Fix
-Update your .signature and .reset-btn CSS to this corrected version. I've also added a -webkit appearance fix to ensure Safari doesn't apply default button styling over your custom look:
-
-CSS
-/* 1. Added the missing closing brace here */
-.signature {
-  font-style: italic;
-} 
-
-/* 2. Enhanced Reset Button for Safari Compatibility */
 .reset-btn {
   display: inline-block;
   margin-top: 25px;

@@ -102,6 +102,7 @@ section:target {
 
 .signature {
   font-style: italic;
+}
 
 @keyframes heartbeat {
   0% { transform: scale(1); }

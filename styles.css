@@ -1,0 +1,185 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #db7093, #ffd1dc);
+background-attachment: fixed;
+overflow-x: hidden;
+}
+
+.card {
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(219, 112, 147, 0.3);
+  max-width: 400px;
+  padding: 50px 30px;
+  margin: 0 auto;
+border: 8px double palevioletred;
+
+  transition: transform 0.3s, background-color 0.3s ease
+}
+
+.card:hover {
+  background-color: papayawhip;
+  transform: translateY(-15px) scale(1.02);
+}
+
+h1::before {
+  content: "❤️ ";
+}
+
+h1::after {
+  content: " ❤️";
+}
+
+.message {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.card-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+color: white !important;
+}
+
+.card-links a {
+  text-decoration: none;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: crimson;
+  transition: background-color 0.3s ease;
+  color: white;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-links a:hover {
+  background-color: coral;
+  color: white;
+}
+
+.card-links a:active {
+  background-color: midnightblue;
+  color: white;
+}
+
+.card-links a:focus {
+  outline: 2px solid yellow;
+  color: white;
+}
+
+.card-links a:visited {
+  color: whitesmoke;
+}
+
+section {
+  position: relative; /* Add this! */
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: whitesmoke;
+  padding: 40px;
+  border-radius: 20px; /* Rounder for mobile */
+  display: none;   
+  overflow: hidden; /* Keeps confetti inside the box */
+}
+
+
+section:target {
+  display:block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+section:target {
+  display: block;
+  animation: fadeIn 0.8s ease;
+}
+
+.signature {
+  font-style: italic; font-family: cursive;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+h1 {
+  animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+section p {
+  font-size: 1.5rem; /* Makes it much larger than standard text */
+  font-weight: bold;
+  color: #c9184a;    /* A deeper red so it pops */
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.huge-emoji {
+  display: block;    /* Puts the emoji on its own line */
+  font-size: 4rem;   /* Makes the emoji massive */
+  margin-top: 15px;
+  animation: grow 0.5s ease-out; /* Makes it "pop" in */
+}
+
+@keyframes grow {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+
+
+.confetti-wrapper {
+  position: absolute; /* Changed from relative */
+  top: 50%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0;
+}
+
+section:target .dot {
+  animation: floatUp 1.5s ease-out forwards;
+}
+
+/* Make each dot move differently */
+.dot:nth-child(1) { left: 10%; animation-delay: 0.1s; }
+.dot:nth-child(2) { left: 30%; animation-delay: 0.3s; }
+.dot:nth-child(3) { left: 60%; animation-delay: 0.2s; }
+.dot:nth-child(4) { left: 80%; animation-delay: 0.4s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.reset-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 8px 15px;
+  border: 1px solid palevioletred;
+  border-radius: 20px;
+  color: palevioletred;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:active {
+  background-color: #fff0f3;
+  transform: scale(0.95);
+}
